@@ -28,10 +28,12 @@ body {
 header {
     background-color: var(--secondary-color);
     grid-area: header;
-    display: flex;
-    align-items: center;
     padding: 1.2rem 2.8rem;
     width: 100%;
+}
+header .content {
+    display: flex;
+    align-items: center;
 }
 header .menu {
     background-color: white;
@@ -138,10 +140,10 @@ aside .articles p {
     margin-top: 3.2rem;
 }
 .articles a:hover img {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 footer {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     margin-top: 6.5rem;
     padding: 2rem 0;
     grid-area: footer;
@@ -153,4 +155,46 @@ footer p {
 footer a {
     color: white;
     text-decoration: none;
+}
+/* media queryes */
+@media (min-width: 1000px) {
+    #app {
+        /* justify-content: center; */
+        grid-template:
+        "header header"
+        "main aside"
+        "footer footer";
+    }
+    main {
+        justify-self: end;
+        margin-top: 4.4rem;
+        width: 60rem;
+    }
+    header {
+        justify-self: start;
+    }
+    header .content {
+        margin: 0 auto;
+        max-width: 115rem;
+    }
+    main img.post-cover {
+        padding: 0 2.2rem;;
+    }
+    aside {
+        justify-self: start;
+        margin-top: 4.4rem;
+        width: 38.4rem;
+    }
+    aside h2 {
+        margin-top: 0;
+    }
+}
+@media (min-width: 1200px) {
+    main {
+        width: 80rem;
+    }
+    .title-section {
+        justify-content: space-between;
+        display: flex;
+    }
 }
